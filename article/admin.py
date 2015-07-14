@@ -1,0 +1,15 @@
+from django.contrib import admin
+from article.models import Article, Comments
+
+# Register your models here.
+class ArticleInline(admin.StackedInline):
+    """docstring for ArticleInline"""
+
+    model = Comments
+    extra = 1
+
+class ArticleAdmin(admin.ModelAdmin):
+    fields = ['article_title', 'article_text', 'article_date']
+    inlines = [ArticleInline]
+
+admin.site.register(Article,ArticleAdmin)
