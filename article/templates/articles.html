@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My first blog</title>
+</head>
+<body>
+    {% for article in articles %}
+    <h6>Date of publication: {{ article.article_date}}</h6>
+    <h2><a href='/get/{{ article.id }}'>{{ article.article_title}}</a></h2>
+    <p>{{ article.article_text}}</p>
+    <p>Likes: {{ article.article_likes}}</p>
+    <hr>
+    {% endfor %}
+</body>
+</html>

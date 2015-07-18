@@ -53,6 +53,10 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'blog.urls'
 
+TEMPLATES_DIRS = [
+                '/data/work/virtualenvs/youtubeapp/src/blog/templates'
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
