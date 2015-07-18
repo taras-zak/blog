@@ -1,5 +1,7 @@
 from django.shortcuts import render_to_response
 from article.models import Article, Comments
+from django.template.loader import get_template
+from django.template import Context
 
 
 # Create your views here

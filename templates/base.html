@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My first blog - {% block title%}{% endblock %}</title>
+    <link rel="stylesheet"  href="{% static "static/css/foundation.css" %}">
+</head>
+<body>
+    <h1><a href="/">Perspective blog</a></h1>
+    <div class="row">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
