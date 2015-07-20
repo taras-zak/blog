@@ -13,5 +13,13 @@
         {% for comment in comments %}
             <p>{{ comment.comments_text}}</p>
         {% endfor %}
+        
+            <form action="/addComment/{{ article.id }}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="button" value="Comment">
+            </form>
+        
     </div>
+    
 {% endblock %}
