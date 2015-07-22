@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'article',
+    'loginsys',
     
 )
 
@@ -60,6 +61,7 @@ TEMPLATES = [
         'DIRS': [
                 '/data/work/virtualenvs/youtubeapp/src/blog/templates/',
                 '/data/work/virtualenvs/youtubeapp/src/blog/article/templates',
+                '/data/work/virtualenvs/youtubeapp/src/blog/loginsys/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {

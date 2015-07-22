@@ -14,11 +14,13 @@
             <p>{{ comment.comments_text}}</p>
         {% endfor %}
         
+            {% if username %}
             <form action="/addComment/{{ article.id }}" method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" class="button" value="Comment">
             </form>
+            {% endif %}
         
     </div>
     

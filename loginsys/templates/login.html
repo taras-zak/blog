@@ -1,0 +1,17 @@
+{%  extends 'base.html' %}
+{% block login%}
+<div class="large-ofset-3 large-6 columns">
+    <form action="auth/login" method="post">
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        {% if login_error%}
+            <label class="error">{{ login_error }}</label>
+        {% endif %} 
+        <input type="submit" class="button" value="LogIn">
+        
+    </form>
+</div>
+{% endblock %}

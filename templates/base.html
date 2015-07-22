@@ -1,15 +1,34 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    
     <title>My first blog - {% block title%}{% endblock %}</title>
-    <link rel="stylesheet"  href="{% static "static/css/foundation.css" %}">
+    <link rel="stylesheet" href="{% static "static/css/foundation.css" %}">
+    <script type="text/javascript" src="{% static "static/js/vendor/modernizr.js" %}"></script>
 </head>
 <body>
-    <h1><a href="/">Perspective blog</a></h1>
-    <div class="row">
-        {% block content %}{% endblock %}
-    </div>
+
+<div class="top-bar">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="/">Perspective Blog</a></h1>
+        </li>
+    </ul>
+    <section class="top-bar-section">
+        <ul class="right">
+        {% if username %}
+            <li><a href="auth/logout/">Quit ({{ username }})</a></li>
+        {% else %}
+            <li><a href="auth/login/">Log In</a></li>
+        {% endif %}
+        </ul>
+    </section>
+</div>
+<h1><a href="/">Perspective blog</a></h1>
+<div class="row">
+    {% block content %}{% endblock %}
+    {% block login%}{% endblock %}
+</div>
 </body>
 </html>

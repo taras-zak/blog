@@ -6,17 +6,19 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http.response import Http404
 from forms import CommentForm
 from django.template.context_processors import csrf
+from django.contrib import auth
 
 
 # Create your views here
 def articles(request):
-    return render_to_response('articles.html', {'articles': Article.objects.all()})
+    return render_to_response('articles.html', {'articles': Article.objects.all(), 'username': auth.get_user(request).username})
 
 def article(request, article_id = 1):
     comment_form = CommentForm
     args = {'article': Article.objects.get(id = article_id), 
             'comments': Comments.objects.filter(comments_article_id = article_id),
             'form': comment_form,
+            'username': auth.get_user(request).username,
             }
     args.update(csrf(request))
     return render_to_response('article.html', args)
