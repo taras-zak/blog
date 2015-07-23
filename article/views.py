@@ -7,11 +7,16 @@ from django.http.response import Http404
 from forms import CommentForm
 from django.template.context_processors import csrf
 from django.contrib import auth
+from django.core.paginator import Paginator
 
 
 # Create your views here
-def articles(request):
-    return render_to_response('articles.html', {'articles': Article.objects.all(), 'username': auth.get_user(request).username})
+def articles(request, page_number = 1):
+    all_articles = Article.objects.all()
+    curr_page = Paginator(all_articles, 2)
+    return render_to_response('articles.html', {'articles': curr_page.page(page_number), 
+                                                'username': auth.get_user(request).username}
+                            )
 
 def article(request, article_id = 1):
     comment_form = CommentForm
