@@ -10,7 +10,10 @@
         {% if login_error%}
             <label class="error">{{ login_error }}</label>
         {% endif %} 
-        <input type="submit" class="button" value="LogIn">
+        <input type="submit" class="button round" value="LogIn">
+        <div class="label round secondary">
+            <a href="/auth/register/">Register</a>
+        </div>
         
     </form>
 </div>
