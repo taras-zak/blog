@@ -59,9 +59,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-                '/data/work/virtualenvs/youtubeapp/src/blog/templates/',
-                '/data/work/virtualenvs/youtubeapp/src/blog/article/templates',
-                '/data/work/virtualenvs/youtubeapp/src/blog/loginsys/templates',
+                '/data/virtualenvs/youtubeapp/blog/templates/',
+                '/data/virtualenvs/youtubeapp/blog/article/templates',
+                '/data/virtualenvs/youtubeapp/blog/loginsys/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -110,6 +110,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     # ...
-    ("static", "/data/work/virtualenvs/youtubeapp/src/blog/static"),
+    ("static", "/data/virtualenvs/youtubeapp/blog/static"),
 )
 
